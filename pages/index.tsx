@@ -17,6 +17,7 @@ export default function Home() {
         body: JSON.stringify({ search: text_to_search }),
       });
       const data = await response.json();
+      console.log(data);
       setResult(data.result);
     } catch (error) {
       console.log(error);
