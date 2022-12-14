@@ -21,6 +21,5 @@ export default async function (req, res) {
 function generatePrompt(search) {
   const capitalizedAnimal =
     search[0].toUpperCase() + search.slice(1).toLowerCase();
-  console.log(search);
-  return search;
+  return capitalizedAnimal;
 }
