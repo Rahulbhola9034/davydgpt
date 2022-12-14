@@ -5,17 +5,17 @@ const configuration = new Configuration({
 });
 const openai = new OpenAIApi(configuration);
 
-export default function opendavi(req: any, res: any) {
+export default async function opendavi(req: any, res: any) {
   const { search } = req.body;
   console.log(search);
-  // const completion = await openai.createCompletion({
-  //   model: "text-davinci-003",
-  //   prompt: generatePrompt(search),
-  //   temperature: 0.6,
-  //   max_tokens: 2048,
-  // });
-  // console.log(completion.data.choices[0].text);
-  res.status(200).json({ result: "ssss" });
+  const completion = await openai.createCompletion({
+    model: "text-davinci-003",
+    prompt: generatePrompt(search),
+    temperature: 0.6,
+    max_tokens: 2048,
+  });
+  console.log(completion.data.choices[0].text);
+  res.status(200).json({ result: completion.data.choices[0].text });
 }
 
 function generatePrompt(search: any) {
