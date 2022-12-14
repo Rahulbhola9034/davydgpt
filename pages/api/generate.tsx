@@ -18,7 +18,7 @@ export default function opendavi(req: any, res: any) {
   res.status(200).json({ result: "ssss" });
 }
 
-function generatePrompt(search) {
+function generatePrompt(search: any) {
   const capitalizedAnimal =
     search[0].toUpperCase() + search.slice(1).toLowerCase();
   return capitalizedAnimal;
