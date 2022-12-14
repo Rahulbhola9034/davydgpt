@@ -6,7 +6,7 @@ import styles from "../styles/Home.module.css";
 export default function Home() {
   const [text_to_search, set_text_to_search] = useState("");
   const [result, setResult] = useState("");
-  async function onSubmit(event) {
+  async function onSubmit(event: any) {
     event.preventDefault();
     try {
       const response = await fetch("/api/generate", {
