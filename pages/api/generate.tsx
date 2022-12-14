@@ -5,7 +5,7 @@ const configuration = new Configuration({
 });
 const openai = new OpenAIApi(configuration);
 
-export default function opendavi(req, res) {
+export default function opendavi(req: any, res: any) {
   const { search } = req.body;
   console.log(search);
   // const completion = await openai.createCompletion({
